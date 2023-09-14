@@ -41,12 +41,17 @@ function Form() {
                 sent = `${-int1} and ${-int2} multiply to ${number} and add to ${deez}`;
             }
         }
+        let ansText = document.querySelector('#answer');
         if (sent === false) {
             // return "Not Possible";
-            alert("Not Possible!");
+            //alert("Not Possible!");
+            ansText.innerHTML = "Not Possible!";
+            ansText.style.color = "red";
         } else {
             // return sent;
-            alert(sent);
+            //alert(sent);
+            ansText.innerHTML= sent;
+            ansText.style.color = "green";
         }
     }
 
@@ -63,6 +68,7 @@ function Form() {
     return (
         <div className="container">
             <form onSubmit={lol}>
+                <p id="answer"></p>
                 <div class="mb-3">
                     <label for="mT" class="form-label">Multiply To</label>
                     <input type="number" class="form-control" id="mT" placeholder="15" required/>
